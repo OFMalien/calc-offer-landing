@@ -188,7 +188,7 @@
     position: relative; padding: calc(var(--nav-height) + 80px) 0 96px;
     background:
       linear-gradient(rgba(12, 12, 14, 0.65), rgba(12, 12, 14, 0.65)),
-      url("img/hero_new.jpg") center / cover no-repeat, var(--bg-2);
+      url("img/hero_neutral.jpg") center / cover no-repeat, var(--bg-2);
     overflow: hidden;
   }
   .hero::after {
@@ -246,7 +246,7 @@
   .calc-foot { margin-top: 16px; font-size: 13px; color: var(--muted); line-height: 1.5; }
   
   @media (max-width: 900px) {
-    .hero { padding: 120px 0 64px; background: linear-gradient(rgba(12, 12, 14, 0.65), rgba(12, 12, 14, 0.65)), url("img/hero_new.jpg") center / cover no-repeat, var(--bg-2); }
+    .hero { padding: 120px 0 64px; background: linear-gradient(rgba(12, 12, 14, 0.65), rgba(12, 12, 14, 0.65)), url("img/hero_neutral.jpg") center / cover no-repeat, var(--bg-2); }
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero-logo { margin: 0 auto 24px; }
     .hero-grid > div:first-child { text-align: center; }
@@ -459,6 +459,12 @@
 }
 </script>
 
+
+  <style>
+    .auction-logo { display: flex; align-items: center; gap: 12px; font-weight: 900; font-size: 20px; letter-spacing: 2px; }
+    .auction-logo svg { height: 28px; width: auto; fill: currentColor; }
+  </style>
+
 </head>
 <body>
 
@@ -496,7 +502,7 @@
           <svg><use href="#ic-telegram"></use></svg>
         </a>
       </div>
-      <a class="head-cta" href="https://t.me/ai_1312"><span>Калькулятор</span></a>
+      
     </div>
   </div>
 </header>
@@ -506,12 +512,33 @@
     <div class="wrap hero-grid">
       <div class="fade-up">
 
-        <div class="badge"><i></i>Готове IT-рішення для автобізнесу</div>
-        <h1>Telegram-Калькулятор<br>для автобізнесу.<span>Збільште конверсію х3</span></h1>
-        <p class="sub">Сучасний Landing Page та розумний Telegram-бот, який сам рахує вартість авто, відфільтровує "зевак", збирає ліди та економить час ваших менеджерів.</p>
-        <div class="hero-actions">
+        <div class="badge" style="background: rgba(255,163,0,.15); color: var(--accent); border-color: rgba(255,163,0,.3);"><i></i>Збільшує конверсію х3</div>
+        <h1 style="font-size: 42px; margin-bottom: 24px;">Telegram-бот із калькулятором «під ключ»</h1>
+        
+        <div class="hero-list" style="margin-bottom: 32px; font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 600px;">
+          <p style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 8px;">
+            <svg style="width: 20px; height: 20px; fill: var(--accent); flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Клієнт вводить:</strong> ціну авто на аукціоні, тип палива, об’єм двигуна та рік випуску.</span>
+          </p>
+          <p style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 8px;">
+            <svg style="width: 20px; height: 20px; fill: var(--accent); flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Отримує повний розрахунок:</strong> аукціонний збір, логістика в США та морські перевезення, доставка по Україні, розмитнення (мито, акциз, ПДВ, пенсійний збір) та підсумок у доларах і гривнях.</span>
+          </p>
+          <p style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 8px;">
+            <svg style="width: 20px; height: 20px; fill: var(--accent); flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Курс НБУ</strong> оновлюється автоматично.</span>
+          </p>
+          <p style="display: flex; align-items: flex-start; gap: 8px;">
+            <svg style="width: 20px; height: 20px; fill: var(--accent); flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span><strong>Прийом заявок 24/7:</strong> бот збирає інформацію про авто, бюджет та контактні дані - менеджеру миттєво надходить готова картка заявки в Telegram.</span>
+          </p>
+        </div>
+
+        <div class="hero-actions" style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
           <a class="btn" href="https://t.me/ai_1312">Обговорити розробку</a>
-          <span class="micro">Швидкий запуск · сучасний дизайн · підтримка</span>
+          <a class="head-cta" href="https://t.me/ai_1312" style="display: inline-flex; background: var(--accent); color: #111; padding: 16px 40px; font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; text-decoration: none;">Бот-калькулятор</a>
+        </div>
+        <div style="margin-top: 24px;"><span class="micro">Швидкий запуск · сучасний дизайн · підтримка</span>
         </div>
       </div>
 
@@ -520,8 +547,18 @@
 
   <div class="strip">
     <div class="strip-in">
-      <span class="on">COPART</span><span>IAAI</span><span>BMW</span><span>TOYOTA</span><span>TESLA</span><span>VOLKSWAGEN</span><span>AUDI</span><span>MERCEDES</span><span>FORD</span><span>HONDA</span>
-      <span class="on">COPART</span><span>IAAI</span><span>BMW</span><span>TOYOTA</span><span>TESLA</span><span>VOLKSWAGEN</span><span>AUDI</span><span>MERCEDES</span><span>FORD</span><span>HONDA</span>
+      <div class="auction-logo">COPART</div>
+      <div class="auction-logo">IAAI</div>
+      <div class="auction-logo">MANHEIM</div>
+      <div class="auction-logo">COPART</div>
+      <div class="auction-logo">IAAI</div>
+      <div class="auction-logo">MANHEIM</div>
+      <div class="auction-logo">COPART</div>
+      <div class="auction-logo">IAAI</div>
+      <div class="auction-logo">MANHEIM</div>
+      <div class="auction-logo">COPART</div>
+      <div class="auction-logo">IAAI</div>
+      <div class="auction-logo">MANHEIM</div>
     </div>
   </div>
 
