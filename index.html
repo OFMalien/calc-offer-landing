@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Автобізнес UA - Авто з США під ключ | Дніпро</title>
+<meta name="description" content="Пригон авто з США під ключ у Дніпрі. Розрахуйте повну вартість за 2 хвилини в Telegram-боті: аукціон, доставка, розмитнення, комісія. Гарантія кінцевої вартості в договорі.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#121214">
+<link rel="canonical" href="https://ofmalien.github.io/4drive-landing/">
+
+<!-- OpenGraph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Автобізнес UA">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Автобізнес UA - Авто з США під ключ | Дніпро">
+<meta property="og:description" content="Повна вартість авто з США за 2 хвилини в Telegram-боті. Кінцева ціна зафіксована в договорі.">
+<meta property="og:url" content="https://ofmalien.github.io/calc-offer-landing/">
+<meta property="og:image" content="https://ofmalien.github.io/4drive-landing/img/og_4drive.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ofmalien.github.io/4drive-landing/img/og_4drive.jpg">
+
+<!-- Preload Hero Image & Fonts for LCP -->
+<link rel="preload" as="image" href="img/hero_new.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #121214;
+    --bg-2: #0C0C0E;
+    --surface: #1E1E22;
+    --surface-2: #2A2A2F;
+    --accent: #FFA300;
+    --accent-2: #FFC400;
+    --text: #FFFFFF;
+    --muted: #9CA3AF; /* Улучшен контраст для WCAG (4.5:1+) */
+    --line: #303036;
+    --radius: 16px;
+    --nav-height: 72px;
+  }
+  
+  /* Reset & Base */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* Accessibility Focus */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+
+  /* Typography */
+  .sec-head { position: relative; margin-bottom: 40px; }
+  .sec-head::before {
+    content: attr(data-ghost);
+    position: absolute; left: -4px; top: -48px;
+    font-size: clamp(56px, 11vw, 132px);
+    font-weight: 900; line-height: 1;
+    color: #FFFFFF; opacity: 0.03;
+    letter-spacing: -2px; white-space: nowrap;
+    pointer-events: none; user-select: none;
+  }
+  .sec-head h2 {
+    position: relative;
+    font-size: clamp(28px, 4.5vw, 44px);
+    font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.5px; max-width: 860px;
+  }
+  .sec-head h2 em { color: var(--accent); font-style: normal; }
+  .lead { color: var(--muted); font-size: 18px; max-width: 700px; margin-top: 16px; }
+
+  /* Buttons */
+  .btn {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    padding: 16px 40px;
+    font-family: inherit; font-size: 16px; font-weight: 800;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--accent); background: transparent;
+    border: 2px solid var(--accent);
+    transition: color .25s ease, background .25s ease;
+    cursor: pointer;
+  }
+  .btn::before, .btn::after {
+    content: ""; position: absolute;
+    width: 40%; height: 2px;
+    background: var(--accent); transition: width .3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn::before { left: -8px; bottom: -8px; }
+  .btn::after { right: -8px; top: -8px; }
+  .btn:hover { background: var(--accent); color: #111; }
+  .btn:hover::before, .btn:hover::after { width: 60%; }
+
+  .btn-solid {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 16px 40px; background: var(--accent); color: #111;
+    font-weight: 900; font-size: 16px; letter-spacing: 1px;
+    text-transform: uppercase; border: 2px solid var(--accent);
+    transition: transform .2s ease, box-shadow .2s ease;
+    cursor: pointer;
+  }
+  .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,163,0,.3); }
+  .micro { display: block; margin-top: 16px; font-size: 14px; color: var(--muted); }
+
+  /* Header (Redesigned) */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+    background: rgba(12,12,14,.9);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    height: var(--nav-height); display: flex; align-items: center;
+  }
+  .header-in {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; gap: 16px;
+  }
+  .logo img { height: 32px; width: auto; }
+  .head-actions { display: flex; align-items: center; gap: 12px; }
+  .head-address { display: none; } /* Kept for reference but unused */
+  
+  .head-socials { display: flex; gap: 12px; }
+  .nav-soc {
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: transparent; color: var(--accent);
+    border: 1px solid var(--accent);
+    transition: all .2s ease;
+  }
+  .nav-soc:hover { background: var(--accent); color: #111; }
+  .nav-soc svg { width: 18px; height: 18px; fill: currentColor; }
+
+  .head-cta {
+    background: var(--accent); color: #111;
+    padding: 10px 24px; font-size: 14px; font-weight: 800;
+    letter-spacing: 1px; text-transform: uppercase; border-radius: 4px;
+    transition: filter .2s;
+  }
+  .head-cta:hover { filter: brightness(1.1); }
+  
+  .head-outline {
+    position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 8px 16px; border-radius: 4px;
+    font-size: 13px; font-weight: 800;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    color: var(--accent); background: transparent;
+    border: 1px solid var(--accent);
+    transition: color .25s ease, background .25s ease;
+    cursor: pointer;
+  }
+  .head-outline svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+  .head-outline::before, .head-outline::after {
+    content: ""; position: absolute;
+    width: 30%; height: 1px;
+    background: var(--accent); transition: width .3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .head-outline::before { left: -4px; bottom: -4px; }
+  .head-outline::after { right: -4px; top: -4px; }
+  .head-outline:hover { background: rgba(255,163,0,.1); }
+  .head-outline:hover::before, .head-outline:hover::after { width: 50%; }
+
+  @media (max-width: 1024px) {
+    .head-outline { display: none; }
+  }
+  @media (max-width: 600px) {
+    .head-cta span { display: none; }
+    .head-cta::after { content: "🧮"; font-size: 16px; }
+    .head-cta { padding: 10px 14px; }
+    .head-actions { gap: 12px; }
+    .nav-soc { width: 36px; height: 36px; }
+  }
+
+  /* Hero */
+  .hero {
+    position: relative; padding: calc(var(--nav-height) + 80px) 0 96px;
+    background:
+      linear-gradient(rgba(12, 12, 14, 0.65), rgba(12, 12, 14, 0.65)),
+      url("img/hero_new.jpg") center / cover no-repeat, var(--bg-2);
+    overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(circle at 60% 40%, #000 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative; z-index: 2;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    gap: 64px;
+  }
+  .hero-logo { width: 280px; max-width: 70vw; margin-bottom: 24px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,163,0,.3); background: rgba(255,163,0,.1);
+    color: var(--accent); padding: 6px 16px; font-size: 13px; font-weight: 800;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; border-radius: 4px;
+  }
+  .badge i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .hero h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.1; letter-spacing: -1.5px; }
+  .hero h1 span { color: var(--accent); display: block; }
+  .hero .sub { margin-top: 24px; font-size: clamp(16px, 2vw, 18px); color: #D1D5DB; max-width: 560px; }
+  .hero-actions { margin-top: 40px; }
+
+  /* Calc Card */
+  .calc-card {
+    background: linear-gradient(165deg, var(--surface) 0%, #17171A 100%);
+    border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 32px; box-shadow: 0 32px 64px rgba(0,0,0,.6);
+  }
+  .calc-card-top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--line);
+  }
+  .calc-card-top strong { font-size: 16px; font-weight: 800; }
+  .calc-card-top span { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .calc-row {
+    display: flex; justify-content: space-between;
+    padding: 8px 0; font-size: 15px; border-bottom: 1px dashed rgba(255,255,255,0.05);
+  }
+  .calc-row span { color: var(--muted); }
+  .calc-row b { font-weight: 800; }
+  .calc-total {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 16px; padding-top: 16px; border-top: 2px solid var(--accent);
+  }
+  .calc-total span { font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+  .calc-total b { font-size: clamp(24px, 3vw, 32px); font-weight: 900; color: var(--accent); }
+  .calc-foot { margin-top: 16px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+  
+  @media (max-width: 900px) {
+    .hero { padding: 120px 0 64px; background: linear-gradient(rgba(12, 12, 14, 0.65), rgba(12, 12, 14, 0.65)), url("img/hero_new.jpg") center / cover no-repeat, var(--bg-2); }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-logo { margin: 0 auto 24px; }
+    .hero-grid > div:first-child { text-align: center; }
+    .hero .sub { margin: 24px auto 0; }
+  }
+
+  /* Marquee */
+  .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding: 24px 0; }
+  .strip-in { display: flex; align-items: center; gap: 64px; width: max-content; animation: slide 30s linear infinite; }
+  .strip-in span { font-size: 20px; font-weight: 900; letter-spacing: 2px; color: #4A4A50; text-transform: uppercase; }
+  .strip-in span.on { color: var(--accent); }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .strip-in { animation: none; } }
+
+  /* Sections */
+  section { padding: 96px 0; position: relative; }
+  section.tint { background: var(--bg-2); }
+
+  /* Cards (Fears) */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(288px, 1fr)); gap: 24px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 40px 32px;
+    text-align: center; transition: transform .3s ease, border-color .3s ease;
+  }
+  .card:hover { transform: translateY(-8px); border-color: var(--accent); }
+  .card .ico { 
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(255,163,0,.1); color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .card .ico svg { width: 32px; height: 32px; fill: currentColor; }
+  .card h3 { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+  .card p { font-size: 16px; color: var(--muted); }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; counter-reset: s; }
+  .step {
+    position: relative; background: var(--surface);
+    border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 40px 24px 32px;
+  }
+  .step .num {
+    position: absolute; top: -20px; left: 24px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--accent); color: #111;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 18px;
+  }
+  .step h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+  .step p { font-size: 15px; color: var(--muted); }
+
+  /* Calculator Breakdown */
+  .calc-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .calc-list { list-style: none; }
+  .calc-list li {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 16px;
+  }
+  .calc-list li:last-child { border-bottom: none; }
+  .calc-list li::before { content: "✓"; color: var(--accent); font-weight: 900; }
+  .calc-aside {
+    background: var(--surface); border: 1px solid var(--line);
+    border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 32px;
+  }
+  .calc-aside h3 { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+  .calc-aside p { font-size: 16px; color: var(--muted); margin-bottom: 24px; }
+  @media (max-width: 860px) { .calc-split { grid-template-columns: 1fr; gap: 32px; } }
+
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .shot {
+    display: block; position: relative; overflow: hidden;
+    border-radius: var(--radius); border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .shot img { width: 100%; height: auto; transition: transform .5s ease; }
+  .shot:hover img { transform: scale(1.05); }
+  .shot figcaption { padding: 20px; font-size: 16px; font-weight: 800; }
+  .shot figcaption i { display: block; font-style: normal; font-weight: 700; font-size: 14px; color: var(--accent); margin-top: 8px; }
+
+  /* Proof */
+  .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; }
+  .proof { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 24px; }
+  .proof .big { font-size: 36px; font-weight: 900; color: var(--accent); line-height: 1.1; margin-bottom: 8px; }
+  .proof .big.sm { font-size: 28px; }
+  .proof p { font-size: 16px; color: var(--muted); }
+
+  /* Diagonal CTA */
+  .slash { position: relative; overflow: hidden; background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .slash-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 360px; }
+  .slash-left {
+    background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%); color: #111;
+    padding: 64px 64px 64px 24px; clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    margin-left: calc((100vw - 1180px) / -2 - 24px); padding-left: calc((100vw - 1180px) / 2 + 24px);
+  }
+  .slash-left h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 900; line-height: 1.1; }
+  .slash-left p { margin-top: 16px; font-size: 18px; font-weight: 700; max-width: 440px; }
+  .slash-right { padding: 56px 0 56px 32px; }
+  .slash-right h3 { font-size: 24px; font-weight: 800; margin-bottom: 16px; }
+  .slash-right p { color: var(--muted); font-size: 16px; margin-bottom: 32px; max-width: 440px; }
+  @media (max-width: 900px) {
+    .slash-grid { grid-template-columns: 1fr; }
+    .slash-left { clip-path: none; margin-left: 0; padding: 48px 24px; }
+    .slash-right { padding: 48px 24px; }
+  }
+
+  /* FAQ */
+  .faq { max-width: 860px; }
+  details { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); margin-bottom: 16px; transition: border-color .3s; }
+  details[open] { border-color: var(--accent); }
+  summary { cursor: pointer; list-style: none; padding: 24px 56px 24px 24px; font-size: 18px; font-weight: 800; position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+"; position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
+    color: var(--accent); font-size: 28px; font-weight: 400; transition: transform .3s;
+  }
+  details[open] summary::after { content: "−"; }
+  details p { padding: 0 24px 24px; color: var(--muted); font-size: 16px; }
+
+  /* Redesigned Contact Section */
+  .contact-redesign {
+    position: relative;
+    padding: 96px 0;
+    background: url("img/4drive_brand.jpg") center / cover no-repeat;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-redesign::before {
+    content: ""; position: absolute; inset: 0;
+    background: rgba(12, 12, 14, 0.92); /* Dark overlay */
+    backdrop-filter: blur(4px);
+  }
+  .contact-wrapper { position: relative; z-index: 2; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .contact-box {
+    background: rgba(30, 30, 34, 0.7); border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius); padding: 32px 24px;
+    transition: transform .3s ease, border-color .3s ease;
+  }
+  .contact-box:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .contact-box .lbl { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .contact-box .val { font-size: 20px; font-weight: 800; color: #FFF; }
+  .contact-box .note { font-size: 15px; color: var(--muted); margin-top: 8px; }
+
+  /* Footer */
+  footer { padding: 48px 0; text-align: center; color: var(--muted); font-size: 15px; background: var(--bg); }
+  footer a { color: var(--accent); transition: color .2s; }
+  footer a:hover { color: var(--text); }
+  
+  /* Scroll Animations */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* Sticky CTA Mobile */
+  .sticky-cta { display: none; }
+  @media (max-width: 720px) {
+    section { padding: 72px 0; }
+    .contact-redesign { padding: 72px 0; }
+    .sticky-cta {
+      display: flex; align-items: center; justify-content: center;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 85;
+      background: var(--accent); padding: 16px; font-weight: 900; font-size: 16px;
+      letter-spacing: 1px; text-transform: uppercase; color: #111;
+      box-shadow: 0 -4px 16px rgba(0,0,0,.4);
+    }
+  }
+</style>
+
+<!-- JSON-LD SEO Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Автобізнес UA",
+  "image": "https://ofmalien.github.io/4drive-landing/img/og_4drive.jpg",
+  "telephone": "+380661999903",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Костомарівська 1а",
+    "addressLocality": "Дніпро",
+    "addressCountry": "UA"
+  },
+  "url": "https://ofmalien.github.io/4drive-landing/",
+  "priceRange": "$$",
+  "description": "Пригон авто з США під ключ у Дніпрі. Аукціон, доставка, розмитнення, комісія. Гарантія кінцевої вартості в договорі."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Скільки триває пригон авто?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Залежить від штату, порту й завантаженості. Точний орієнтир по строках менеджер називає до угоди - по конкретному авто, а не «в середньому по ринку»."
+    }
+  }, {
+    "@type": "Question",
+    "name": "А якщо вартість зміниться в процесі?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Кінцева вартість фіксується в договорі до старту. Це головна причина, чому клієнти обирають нас: цифра з договору - це цифра, яку ви платите."
+    }
+  }]
+}
+</script>
+
+</head>
+<body>
+
+<!-- SVG Sprite -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="ic-telegram" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol>
+  <symbol id="ic-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></symbol>
+  <symbol id="ic-location" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></symbol>
+  <!-- Premium Vectors (Replacing Emojis) -->
+  <symbol id="ic-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 01-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 00-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></symbol>
+  <symbol id="ic-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 16H8"/><path d="M16 12H8"/><path d="M10 8H8"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="AI Solutions - на початок">
+      <!-- Fixed loading lazy on logo which is above fold -->
+      <span style="font-weight: 900; font-size: 16px; color: var(--accent); letter-spacing: 0.5px; line-height: 1.2;">AI Автоматизація<br>вашого бізнесу.</span>
+    </a>
+    
+    <div class="head-actions">
+      <a class="head-outline" href="https://maps.google.com/?q=Костомарівська+1а+Дніпро" target="_blank" rel="noopener">
+        <svg><use href="#ic-location"></use></svg><span>Онлайн по всьому світу</span>
+      </a>
+      <a class="head-outline" href="https://t.me/ai_1312">
+        <svg><use href="#ic-telegram"></use></svg><span>Консультація</span>
+      </a>
+      <div class="head-socials">
+        <a class="nav-soc" href="https://t.me/ai_1312" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg><use href="#ic-instagram"></use></svg>
+        </a>
+        <a class="nav-soc" href="https://t.me/ai_1312" target="_blank" rel="noopener" aria-label="Telegram Канал">
+          <svg><use href="#ic-telegram"></use></svg>
+        </a>
+      </div>
+      <a class="head-cta" href="https://t.me/ai_1312"><span>Калькулятор</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="fade-up">
+
+        <div class="badge"><i></i>Готове IT-рішення для автобізнесу</div>
+        <h1>Telegram-Калькулятор<br>для автобізнесу.<span>Збільште конверсію х3</span></h1>
+        <p class="sub">Сучасний Landing Page та розумний Telegram-бот, який сам рахує вартість авто, відфільтровує "зевак", збирає ліди та економить час ваших менеджерів.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://t.me/ai_1312">Обговорити розробку</a>
+          <span class="micro">Швидкий запуск · сучасний дизайн · підтримка</span>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <div class="strip">
+    <div class="strip-in">
+      <span class="on">COPART</span><span>IAAI</span><span>BMW</span><span>TOYOTA</span><span>TESLA</span><span>VOLKSWAGEN</span><span>AUDI</span><span>MERCEDES</span><span>FORD</span><span>HONDA</span>
+      <span class="on">COPART</span><span>IAAI</span><span>BMW</span><span>TOYOTA</span><span>TESLA</span><span>VOLKSWAGEN</span><span>AUDI</span><span>MERCEDES</span><span>FORD</span><span>HONDA</span>
+    </div>
+  </div>
+
+  <section class="tint">
+    <div class="wrap fade-up">
+      <div class="sec-head" data-ghost="НАШІ АВТО">
+        <h2>Реальні авто і ціни <span>з нашого Instagram</span></h2>
+        <p class="lead">Не стокові фото: це карточки з нашої стрічки - авто, які ми привезли клієнтам, з чесною ціною під ключ.</p>
+      </div>
+      <div class="gallery">
+        <a class="shot" href="https://www.instagram.com/p/DZuZ57oiJoj/" target="_blank" rel="noopener">
+          <img src="img/4drive_card_bmw_x6.jpg" alt="BMW X6 xDrive40i 2022" loading="lazy" decoding="async" width="800" height="1000">
+          <figcaption>BMW X6 xDrive40i 2022<i>50 000 $ під ключ</i></figcaption>
+        </a>
+        <a class="shot" href="https://www.instagram.com/p/DYkT5NqDNkl/" target="_blank" rel="noopener">
+          <img src="img/4drive_card_camry.jpg" alt="Toyota Camry SE 2019" loading="lazy" decoding="async" width="800" height="1000">
+          <figcaption>Toyota Camry SE 2019<i>17 800 $ під ключ</i></figcaption>
+        </a>
+        <a class="shot" href="https://www.instagram.com/p/DYhDl0pCLaF/" target="_blank" rel="noopener">
+          <img src="img/4drive_card_jetta.jpg" alt="VW Jetta Sport 2018" loading="lazy" decoding="async" width="800" height="997">
+          <figcaption>VW Jetta Sport 2018<i>Авто в дорозі до клієнта</i></figcaption>
+        </a>
+        <a class="shot" href="https://www.instagram.com/p/DYSLAqxCHEP/" target="_blank" rel="noopener">
+          <img src="img/4drive_card_audi_q7.jpg" alt="Audi Q7 Prestige 2020" loading="lazy" decoding="async" width="800" height="1000">
+          <figcaption>Audi Q7 Prestige 2020<i>35 000 $ під ключ</i></figcaption>
+        </a>
+        <a class="shot" href="https://www.instagram.com/p/C4yTmnSLMEB/" target="_blank" rel="noopener">
+          <img src="img/4drive_card_tesla_m3.jpg" alt="Tesla Model 3 Long Range 2022" loading="lazy" decoding="async" width="800" height="1000">
+          <figcaption>Tesla Model 3 Long Range 2022<i>28 000 $ під ключ</i></figcaption>
+        </a>
+        <a class="shot" href="https://www.instagram.com/p/CstGtJFPZfq/" target="_blank" rel="noopener">
+          <img src="img/4drive_card_audi_sq5.jpg" alt="Audi SQ5 Prestige 2019" loading="lazy" decoding="async" width="800" height="1000">
+          <figcaption>Audi SQ5 Prestige 2019<i>39 000 $ під ключ</i></figcaption>
+        </a>
+        <a class="shot" href="https://www.instagram.com/p/DbGOErMOkD8/" target="_blank" rel="noopener">
+          <img src="img/4drive_card_rav4.jpg" alt="Toyota RAV4 XLE Premium 2021" loading="lazy" decoding="async" width="800" height="1000">
+          <figcaption>Toyota RAV4 XLE Premium 2021<i>Придбали та доставили</i></figcaption>
+        </a>
+        <a class="shot" href="https://www.instagram.com/p/DbGGxJ6Oxqx/" target="_blank" rel="noopener">
+          <img src="img/4drive_card_model_y.jpg" alt="Tesla Model Y Long Range 2021" loading="lazy" decoding="async" width="800" height="1000">
+          <figcaption>Tesla Model Y Long Range 2021<i>Придбали та доставили</i></figcaption>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap fade-up">
+    <div class="sec-head" data-ghost="СТРАХИ">
+      <h2>Чому люди бояться пригону з США - <span>і як цього уникнути</span></h2>
+      <p class="lead">Авто з аукціону США часто виходить помітно дешевше за аналог на місцевому ринку. Але страх зрозумілий: сума велика, процес незнайомий.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ico"><svg><use href="#ic-wallet"></use></svg></div>
+        <h3>«Назвали одну ціну, вийшла інша»</h3>
+        <p>Найчастіша історія на ринку: у процесі доставки з'являються «несподівані» доплати. Ми фіксуємо кінцеву вартість у договорі до старту.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg><use href="#ic-receipt"></use></svg></div>
+        <h3>«Незрозуміло, з чого ціна»</h3>
+        <p>Аукціон, два види доставки, мито, акциз, ПДВ, пенсійний збір, комісія. Бот показує кожну статтю окремо - ви бачите всю математику.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg><use href="#ic-shield"></use></svg></div>
+        <h3>«Боюсь купити хлам»</h3>
+        <p>Підбираємо авто по VIN та історії, перевіряємо стан по фото з аукціону, узгоджуємо кожен лот з вами до ставки.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap fade-up">
+      <div class="sec-head" data-ghost="ПРОЦЕС">
+        <h2>Як відбувається пригон: <span>5 кроків</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Розрахунок у боті</h3>
+          <p>Вводите ціну авто на аукціоні, тип пального, об'єм двигуна, рік - бот рахує повну вартість під ключ.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Підбір під бюджет</h3>
+          <p>Менеджер пропонує варіанти з аукціонів Copart, IAAI та Manheim під вашу суму й побажання.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Купівля на аукціоні</h3>
+          <p>Ставку робимо тільки після вашого підтвердження. Ви бачите лот, фото та ціну.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Доставка й розмитнення</h3>
+          <p>Перевозка по США, океан, порт, доставка по Україні, повне митне оформлення - все на нашому боці.</p>
+        </div>
+        <div class="step">
+          <div class="num">5</div>
+          <h3>Авто у вас</h3>
+          <p>Отримуєте авто з документами та постановкою на облік. Вартість - та, що була в договорі.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap fade-up">
+    <div class="sec-head" data-ghost="КАЛЬКУЛЯТОР">
+      <h2>Що саме рахує <span>калькулятор</span></h2>
+      <p class="lead">Це не «орієнтовна ціна від». Бот розкладає вартість на всі статті за українськими правилами розмитнення 2026 року.</p>
+    </div>
+    <div class="calc-split">
+      <div class="calc-left" style="display: flex; flex-direction: column; gap: 32px;">
+        <ul class="calc-list">
+        <li>Ціна авто на аукціоні (Copart / IAAI / Manheim)</li>
+        <li>Аукціонний та брокерський збір</li>
+        <li>Доставка по США до порту</li>
+        <li>Морська доставка в Україну</li>
+        <li>Доставка по Україні</li>
+        <li>Розмитнення: мито, акциз, ПДВ, пенсійний збір</li>
+        <li>Комісія AI Solutions - одна цифра, без «зірочок»</li>
+      </ul>
+        <div class="calc-aside">
+        <h3>Бензин, дизель, гібрид, електро</h3>
+        <p>Акциз рахується від об'єму двигуна або ємності батареї - для кожного типу свій. Курс НБУ підтягується автоматично на день розрахунку.</p>
+        <a class="btn" href="https://t.me/ai_1312">Відкрити бота</a>
+        <span class="micro">Одразу після розрахунку можна замовити підбір - або просто зберегти цифри собі</span>
+      </div>
+      </div>
+      <div class="calc-card fade-up" style="transition-delay: 0.2s;">
+        <div class="calc-card-top">
+          <strong>Toyota Camry SE 2019</strong>
+          <span>Приклад розрахунку</span>
+        </div>
+        <div class="calc-row"><span>Ставка на аукціоні</span><b>$8 043</b></div>
+        <div class="calc-row"><span>Аукціонний та брокерський збір</span><b>$1 128</b></div>
+        <div class="calc-row"><span>Доставка США + океан</span><b>$1 900</b></div>
+        <div class="calc-row"><span>SWIFT / USDT 3.5%</span><b>$380</b></div>
+        <div class="calc-row"><span>Мито, акциз, ПДВ, пенсійний</span><b>$4 799</b></div>
+        <div class="calc-row"><span>Доставка по Україні + сертифікація</span><b>$1 050</b></div>
+        <div class="calc-row"><span>Комісія AI Solutions</span><b>$500</b></div>
+        <div class="calc-total"><span>Під ключ</span><b>$17 800</b></div>
+        <p class="calc-foot">Так виглядає відповідь бота: кожна стаття окремо, підсумок - цифра, яку ви реально платите. Курс НБУ на день розрахунку, правила розмитнення 2026 року.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap fade-up">
+    <div class="sec-head" data-ghost="ДОВІРА">
+      <h2>Чому нам <span>довіряють</span></h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof">
+        <div class="big">6 років</div>
+        <p>привозимо авто з США під ключ</p>
+      </div>
+      <div class="proof">
+        <div class="big sm">Офіс у Дніпрі</div>
+        <p>вул. Костомарівська 1а, ЖК «Женева». Приходьте, познайомимось</p>
+      </div>
+      <div class="proof">
+        <div class="big sm">Договір</div>
+        <p>кінцева вартість зафіксована письмово до старту</p>
+      </div>
+      <a class="proof" href="https://t.me/ai_1312" target="_blank" rel="noopener">
+        <div class="big">4 000+</div>
+        <p>підписників читають нас в Instagram → @4drive_auto_ua</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap fade-up">
+      <div class="sec-head" data-ghost="ВІДГУКИ">
+        <h2>Що кажуть <span>клієнти</span></h2>
+        <p class="lead">Ми не публікуємо тексти відгуків на сайті - їх легко вигадати. Наші клієнти розповідають про свій досвід на відео, біля своїх авто. Все зібрано в Instagram, у хайлайті «відгуки».</p>
+      </div>
+      <a class="btn" href="https://t.me/ai_1312" target="_blank" rel="noopener">Дивитись відео-відгуки</a>
+    </div>
+  </section>
+
+  <div class="slash">
+    <div class="wrap fade-up">
+      <div class="slash-grid">
+        <div class="slash-left">
+          <h2>Дізнайтесь чесну ціну свого авто з США</h2>
+          <p>2 хвилини в Telegram - і у вас повна розкладка вартості під ключ.</p>
+        </div>
+        <div class="slash-right">
+          <h3>100% Анонімно. Без дзвінків і тиску</h3>
+          <p>Вам не потрібно залишати номер телефону чи світити контакти. Рахуйте скільки завгодно варіантів анонімно. Менеджер напише, тільки якщо ви самі натиснете «Залишити заявку».</p>
+          <a class="btn-solid" href="https://t.me/ai_1312">Обговорити розробку</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap fade-up">
+    <div class="sec-head" data-ghost="ПИТАННЯ">
+      <h2>Часті <span>питання</span></h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Скільки триває пригон авто?</summary>
+        <p>Залежить від штату, порту й завантаженості. Точний орієнтир по строках менеджер називає до угоди - по конкретному авто, а не «в середньому по ринку».</p>
+      </details>
+      <details>
+        <summary>А якщо вартість зміниться в процесі?</summary>
+        <p>Кінцева вартість фіксується в договорі до старту. Це головна причина, чому клієнти обирають нас: цифра з договору - це цифра, яку ви платите.</p>
+      </details>
+      <details>
+        <summary>Чи можу я сам обрати авто?</summary>
+        <p>Так. Можете дати нам конкретний лот з Copart, IAAI або Manheim - порахуємо його. Або назвіть бюджет і побажання - підберемо варіанти.</p>
+      </details>
+      <details>
+        <summary>Чи потрібно залишати свій номер для розрахунку?</summary>
+        <p>Ні, бот працює абсолютно анонімно. Вам не потрібно залишати контакти чи номер телефону, щоб дізнатися ціну. Розрахунок вас ні до чого не зобов'язує, і вам ніхто не буде телефонувати з пропозиціями.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Redesigned Contact Section with Brand Background -->
+  <section class="contact-redesign" id="contacts">
+    <div class="wrap contact-wrapper fade-up">
+      <div class="sec-head" data-ghost="КОНТАКТИ">
+        <h2>Приходьте <span>в офіс</span></h2>
+      </div>
+      <div class="contact-grid">
+        <a class="contact-box" href="https://t.me/ai_1312">
+          <div class="lbl">Телефон</div>
+          <div class="val">Консультація</div>
+          <div class="note">Дзвінок або повідомлення</div>
+        </a>
+        <a class="contact-box" href="https://maps.google.com/?q=Костомарівська+1а+Дніпро" target="_blank" rel="noopener">
+          <div class="lbl">Офіс</div>
+          <div class="val">Костомарівська, 1а</div>
+          <div class="note">Дніпро, ЖК «Женева»</div>
+        </a>
+        <a class="contact-box" href="https://t.me/ai_1312" target="_blank" rel="noopener">
+          <div class="lbl">Instagram</div>
+          <div class="val">@4drive_auto_ua</div>
+          <div class="note">Авто, ціни, відео-відгуки</div>
+        </a>
+        <a class="contact-box" href="https://t.me/ai_1312" target="_blank" rel="noopener">
+          <div class="lbl">Telegram-канал</div>
+          <div class="val">@ua4driveauto</div>
+          <div class="note">Свіжі лоти й новини ринку</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Автобізнес UA · Авто з США під ключ · Дніпро ·
+    <a href="https://t.me/ai_1312" target="_blank" rel="noopener">Instagram</a> ·
+    <a href="https://t.me/ai_1312" target="_blank" rel="noopener">Telegram</a>
+  </div>
+</footer>
+
+<a class="sticky-cta" href="https://t.me/ai_1312">Обговорити розробку під ключ</a>
+
+<script>
+  // Simple Intersection Observer for scroll fade-up animations
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  });
+</script>
+
+</body>
+</html>
